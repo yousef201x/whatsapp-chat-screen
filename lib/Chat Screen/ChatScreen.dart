@@ -52,39 +52,78 @@ class ChatScreen extends StatelessWidget{
         ],
       ),
 
-      body: Container(
-        width: double.infinity,
-        height: double.infinity,
-        padding: EdgeInsets.symmetric(horizontal: 16,vertical: 32),
-
-        decoration: BoxDecoration(
-          color: Color(0xFFF181818),
-          image: DecorationImage(
-            image: AssetImage("assets/images/background_pattern.png"),
-            fit: BoxFit.cover,
-          )
-        ),
-
-        child: SingleChildScrollView(
+        body: Container(
+          width: double.infinity,
+          height: double.infinity,
+          padding: EdgeInsets.symmetric(horizontal: 16, vertical: 32),
+          decoration: BoxDecoration(
+            color: Color(0xFFF181818),
+            image: DecorationImage(
+              image: AssetImage("assets/images/background_pattern.png"),
+              fit: BoxFit.cover,
+            ),
+          ),
           child: Column(
-            spacing: 20,
+            spacing: 15,
             children: [
               IncomingMessageBubble(text: "Hello !"),
               OutgoingMessageBubble(text: "Hello !"),
-              IncomingMessageBubble(text: "Hey! Have you ever thought about how random moments can sometimes turn into the best memories? It’s like the universe loves to surprise us when we least expect it!",),
+              IncomingMessageBubble(text: "Hey! How are u doing ? ",),
               IncomingMessageBubble(
                 text: "what a Great Content Tp learn Flutter",
                 image: "assets/images/chat_img.jpg",
-
               ),
-              OutgoingMessageBubble(text: "what a Great Content Tp learn Flutter"),
+              OutgoingMessageBubble(text: "what! a Great Content To learn Flutter"),
+
+              Row(
+                children: [
+                  Expanded(
+                    child: TextFormField(
+                      decoration: InputDecoration(
+                        prefixIcon: Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 20),
+                          child: Image(
+                            image: AssetImage("assets/images/Camera.png"),
+                            width: 24,
+                            height: 24,
+                          ),
+                        ),
+                        fillColor: Colors.transparent,
+                        filled: true,
+                        hintText: "Type a Message ...",
+                        hintStyle: TextStyle(color: Colors.white),
+
+                        suffixIcon: Padding(
+                          padding: EdgeInsetsGeometry.symmetric(horizontal: 20),
+                          child: Image(
+                            image: AssetImage("assets/images/Send.png"),
+                            width: 24,
+                            height: 24,
+                          ),
+                        ),
+
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(100),
+                          borderSide: BorderSide(color: Color(0xFFF168C4B)),
+                        ),
+
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(100),
+                          borderSide: BorderSide(color: Color(0xFFF168C4B)),
+                        ),
+
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(100),
+                          borderSide: BorderSide(color: Color(0xFFF168C4B)),
+                        ),
+                      ),
+                    )
+                  ),
+                ],
+              ),
             ],
           ),
         )
-      ),
-
-
-
 
     );
   }
